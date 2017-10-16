@@ -1,0 +1,31 @@
+### Command alias
+alias ls='/bin/ls -FG'
+alias ll="ls -lh"
+alias la="ls -lhGgoA"
+alias lp='ls -lrth'
+alias wcl='wc -l'
+alias wcc="awk -F'\t' '{print NF; exit}'"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias qs="qstat"
+alias tf="tail -f"
+alias grep='/usr/bin/grep --color=auto'
+alias mkdir='mkdir -p' # make all necessary parent directories
+alias lS='less -S'
+alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
+
+### Software alias
+alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias R='R --no-save --no-restore-data'
+
+### Alias for cluster access
+#alias s2="ssh jonssonp@saba2.cbio.mskcc.org"
+#alias hal="ssh jonssonp@hal.cbio.mskcc.org"
+alias luna="ssh -X jonssonp@luna.cbio.mskcc.org"
+#alias s01="ssh jonssonp@s01.cbio.mskcc.org"
+alias sel="ssh jonssonp@selene.cbio.mskcc.org"
+
