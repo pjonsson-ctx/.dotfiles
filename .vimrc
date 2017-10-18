@@ -1,5 +1,4 @@
 "General
-
 set nocompatible
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -17,17 +16,19 @@ set wildmenu                    "Autocomplete on TAB
 set lazyredraw
 
 "Load pathogen
-execute pathogen#infect('~/.vim/bundle/{}')
+"execute pathogen#infect('~/.vim/bundle/{}')
+call pathogen#infect()
+call pathogen#helptags()
 
 "Colors!
 syntax enable
 filetype plugin indent on
 colorscheme sprinkles
 
-
-"Fix tabs nad indentation
+"Fix tabs and indentation
 set autoindent
 set smartindent
+set smarttab
 set tabstop=4
 set softtabstop=4
 set expandtab
@@ -42,5 +43,3 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 "Enable fzf
 set rtp+=~/.fzf
-
-

@@ -1,3 +1,5 @@
 [user]
 	name = kpjonsson
 	email = philip.jonsson@gmail.com
+[core]
+	excludesfile = /Users/jonssonp/.dotfiles/.git/.gitignore_global

@@ -1,5 +1,11 @@
 ### Source all dotfiles
-for DOTFILE in $(find $HOME/.dotfiles -name ".[^.]*" ! -name ".bash_profile" -type f)
+
+for DOTFILE in $(find $HOME/.dotfiles -maxdepth 1 -name ".[^.]*" \
+	! \( -name ".bash_profile" \
+	-o -name ".Rprofile" \
+	-o -name ".gitconfig" \
+	-o -name ".vimrc" \) \
+	-type f)
 do
 	[ -f "$DOTFILE" ] && source $DOTFILE
 done

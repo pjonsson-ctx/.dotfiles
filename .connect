@@ -1,12 +1,31 @@
-diskutil unmount force $HOME/luna
-diskutil unmount force $HOME/res
-diskutil unmount force $HOME/ifs
+#diskutil unmount force $HOME/luna
+#diskutil unmount force $HOME/res
+#diskutil unmount force $HOME/ifs
 
-mkdir $HOME/luna
-sshfs -o reconnect -o local -o volname=luna -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@selene.cbio.mskcc.org: $HOME/luna
+if [ ! -d $HOME/luna ]
+then
+        mkdir $HOME/luna
+        #sshfs -o reconnect -o local -o volname=luna -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@selene.cbio.mskcc.org: $HOME/luna
+        sshfs jonssonp@selene.cbio.mskcc.org: $HOME/luna \
+                -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+                -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
+                -o volname=luna
+fi
 
-mkdir $HOME/res
-sshfs -o auto_cache -o defer_permissions -o reconnect -o local -o volname=res -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@selene.cbio.mskcc.org:/ifs/res/taylorlab/jonssonp $HOME/res
+if [ ! -d $HOME/res ]
+then
+        mkdir $HOME/res
+        sshfs jonssonp@selene.cbio.mskcc.org:/ifs/res/taylorlab/jonssonp $HOME/res \
+                -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+                -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
+                -o volname=res
+fi
 
-mkdir $HOME/ifs
-sshfs jonssonp@luna.mskcc.org:/ifs $HOME/ifs -o auto_cache -o defer_permissions -o local -o IdentityFile=/Users/jonssonp/.ssh/id_rsa -o reconnect -o transform_symlinks -o follow_symlinks -volname=ifs
+if [ ! -d $HOME/ifs ]
+then
+        mkdir $HOME/ifs
+        sshfs jonssonp@selene.cbio.mskcc.org:/ifs $HOME/ifs \
+                -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+                -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
+                -o volname=ifs
+fi
