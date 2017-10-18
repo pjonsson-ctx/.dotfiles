@@ -1,14 +1,15 @@
-connect () { # re-restablish mounts
-    diskutil unmount force ~/luna
-    diskutil unmount force ~/res
-    $HOME/startup-mounts
+### Mount with sshfs
+connect () { 
+    $HOME/.dotfiles/.connect
     }
 
-mcd () { # make and cd into directory
-        mkdir -p $1
-        cd $1
+### Make and cd into directory
+mcd () {
+	mkdir -p $1
+    cd $1
     }
 
+### Decompress from any format
 extract () {
    if [ -f $1 ] ; then
        case $1 in
@@ -31,3 +32,11 @@ extract () {
    fi
 }
 
+### Show numbered column names
+getcols() {
+	if [ -f $1 ]; then
+		grep -v '^#' $1 | awk 'NR==1{for (i=1; i<=NF; i++) print i"|"$i}'
+	else
+		echo "'$1' is not a valid file!"
+   fi
+}
