@@ -28,6 +28,8 @@ auto_loads = c(
         'plyr',
         'tidyverse',
         'lubridate',
+        'forcats',
+        'stringr',
 		'kpjmisc',
 		'egg',
         'googlesheets',

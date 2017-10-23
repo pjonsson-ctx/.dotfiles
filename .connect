@@ -2,9 +2,10 @@
 #diskutil unmount force $HOME/res
 #diskutil unmount force $HOME/ifs
 
-if [ ! -d $HOME/luna ]
+if [ $(df -h | grep -c "/Users/jonssonp/luna") == 0 ]
 then
-        mkdir $HOME/luna
+        echo -e 'Mounting luna...'
+        #mkdir $HOME/luna
         #sshfs -o reconnect -o local -o volname=luna -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@selene.cbio.mskcc.org: $HOME/luna
         sshfs jonssonp@selene.cbio.mskcc.org: $HOME/luna \
                 -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
@@ -12,18 +13,20 @@ then
                 -o volname=luna
 fi
 
-if [ ! -d $HOME/res ]
+if [ $(df -h | grep -c "/Users/jonssonp/res") == 0 ]
 then
-        mkdir $HOME/res
+        echo -e 'Mounting res...'
+        #mkdir $HOME/res
         sshfs jonssonp@selene.cbio.mskcc.org:/ifs/res/taylorlab/jonssonp $HOME/res \
                 -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=res
 fi
 
-if [ ! -d $HOME/ifs ]
+if [ $(df -h | grep -c "/Users/jonssonp/ifs") == 0 ]
 then
-        mkdir $HOME/ifs
+        echo -e 'Mounting ifs...'
+        #mkdir $HOME/ifs
         sshfs jonssonp@selene.cbio.mskcc.org:/ifs $HOME/ifs \
                 -o reconnect,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
