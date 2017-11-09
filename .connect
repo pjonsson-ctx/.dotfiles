@@ -13,6 +13,11 @@ then
                 -o volname=luna
 fi
 
+if [ -z $(df -h | grep "/Users/jonssonp/res" | tr -s " " | cut -d" " -f6) ]
+then
+        diskutil unmount force $HOME/res
+fi
+
 if [ $(df -h | grep -c "/Users/jonssonp/res") == 0 ]
 then
         echo -e 'Mounting res...'
