@@ -13,7 +13,9 @@ then
                 -o volname=luna
 fi
 
-if [ -z $(df -h | grep "/Users/jonssonp/res" | tr -s " " | cut -d" " -f6) ]
+#if [ -z $(df -h | grep "/Users/jonssonp/res" | tr -s " " | cut -d" " -f6) ]
+if [ -z $(df -h | grep "/Users/jonssonp/res" | tr -s " " | cut -d" " -f6) ] || \
+        [ $(df -h | grep "/Users/jonssonp/res" | tr -s " " | cut -d" " -f6) == 0 ]
 then
         diskutil unmount force $HOME/res
 fi

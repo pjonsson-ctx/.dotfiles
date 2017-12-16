@@ -34,7 +34,8 @@ auto_loads = c(
 		'kpjmisc',
 		'egg',
         'googlesheets',
-        'mosaic'
+        'mosaic',
+        'janitor'
         )
 
 if(interactive()){
@@ -69,6 +70,7 @@ lu = function(vector_in) { length(unique(vector_in ))}
 filter = dplyr::filter
 count = dplyr::count
 fread = data.table::fread
+fwrite = data.table::fwrite
 
 cat('...done!\n')
 
