@@ -43,3 +43,13 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 "Enable fzf
 set rtp+=~/.fzf
+
+" Show invisible characters
+set listchars=tab:>-,trail:·
+set list
+
+" Sane line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+

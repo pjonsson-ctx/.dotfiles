@@ -31,11 +31,12 @@ auto_loads = c(
         'forcats',
         'stringr',
         'reshape2',
-		'kpjmisc',
-		'egg',
+        'kpjmisc',
+        'egg',
         'googlesheets',
         'mosaic',
-        'janitor'
+        'janitor',
+        'patchwork'
         )
 
 if(interactive()){
@@ -57,20 +58,18 @@ like <- function(vector, pattern)
 
 "%like%" = like
 
-### Negates %in%
+#### Negates %in%
 '%nin%' = Negate('%in%')
 '%lik%' = '%like%'
 '%l%' = '%like%'
 
-### Convenience functions
+#### Convenience functions
 len = length
-lib = library
-.Last = .Last.value
 lu = function(vector_in) { length(unique(vector_in ))}
 filter = dplyr::filter
 count = dplyr::count
-fread = data.table::fread
-fwrite = data.table::fwrite
+fread = function(x, ...) as_tibble(data.table::fread(x, ...))
+#fwrite = data.table::fwrite
 
 cat('...done!\n')
 
