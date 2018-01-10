@@ -53,3 +53,12 @@ if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
 
+" Install lightline
+"  git clone https://github.com/itchyny/lightline.vim
+"  ~/.vim/bundle/lightline.vim
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+

@@ -36,7 +36,8 @@ auto_loads = c(
         'googlesheets',
         'mosaic',
         'janitor',
-        'patchwork'
+        'patchwork',
+        'here'
         )
 
 if(interactive()){
