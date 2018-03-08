@@ -37,7 +37,8 @@ auto_loads = c(
         'mosaic',
         'janitor',
         'patchwork',
-        'here'
+        #'here',
+        'shades'
         )
 
 if(interactive()){
