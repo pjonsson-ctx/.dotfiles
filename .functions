@@ -34,9 +34,31 @@ extract () {
 
 ### Show numbered column names
 getcols() {
-	if [ -f $1 ]; then
-		grep -v '^#' $1 | awk 'NR==1{for (i=1; i<=NF; i++) print i"|"$i}'
-	else
-		echo "'$1' is not a valid file!"
-   fi
+    if [ -f $1 ]; then
+        grep -v '^#' $1 | awk 'NR==1{for (i=1; i<=NF; i++) print i"|"$i}'
+    else
+        echo "'$1' is not a valid file!"
+    fi
 }
+
+### Open Facets PNG from cluster
+open_facets() {
+        SSTRING=$1
+        FLIST=$(ls -t /res/*facets-all*out* | cut -f1 | head -1)
+
+        MATCHES=$(grep "$SSTRING" $FLIST | cut -c1-17 | sort | uniq | wc -l)
+        if [ "$MATCHES" -gt 1 ]
+        then
+                echo "More than one match, specify sample"
+                return 1
+        fi
+
+        SPATH=$(grep "$SSTRING" $FLIST | head -1)
+        SAMPLE=${SPATH::17}
+        echo "Opening $SAMPLE"
+
+        SPATH=$(echo $SPATH | tr " " "\n" | tail -n 1 | sed 's/out$/CNCF.png/')
+        echo "Path: $SPATH"
+        open $SPATH
+}
+

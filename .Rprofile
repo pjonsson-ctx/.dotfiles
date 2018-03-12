@@ -2,7 +2,7 @@ cat('Loading default .Rprofile...\n')
 
 ### Do you want to automatically convert strings to factor variables in a data.frame?
 ### WARNING!!! This makes your code less portable/reproducible.
-options(stringsAsFactors=FALSE)
+options(stringsAsFactors = FALSE)
 
 ## Single character shortcuts for summary() and head().
 .env <- new.env()
