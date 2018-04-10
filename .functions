@@ -53,6 +53,12 @@ open_facets() {
                 return 1
         fi
 
+        if [ "$MATCHES" -eq 0 ]
+        then
+                echo "No matches"
+                return 1
+        fi
+
         SPATH=$(grep "$SSTRING" $FLIST | head -1)
         SAMPLE=${SPATH::17}
         echo "Opening $SAMPLE"
