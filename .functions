@@ -68,3 +68,11 @@ open_facets() {
         open $SPATH
 }
 
+# Get url to 12-245 bam file
+bam_url() {
+        BASE=$1
+        grep $BASE ~/luna/keys/key.txt | \
+                cut -f1,2 -d"," | \
+                sed -e 's:,:    /ifs/dmpshare/share/irb12_245/:g' \
+                -e 's/$/.bam/g'
+}
