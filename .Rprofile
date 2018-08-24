@@ -21,9 +21,6 @@ attach(.env)
 Sys.setenv(TAR = '/usr/bin/tar')
 
 ### Start-up items
-quiet_load = function(a_package) {
-  suppressWarnings(suppressPackageStartupMessages(library(a_package, character.only=TRUE))) 
-}
 auto_loads = c(
         'plyr',
         'tidyverse',
@@ -41,9 +38,7 @@ auto_loads = c(
         'shades'
         )
 
-if(interactive()){
-  invisible(sapply(auto_loads, quiet_load))
-}
+options(defaultPackages = c(getOption('defaultPackages'), auto_loads))
 
 like <- function(vector, pattern)
 {
