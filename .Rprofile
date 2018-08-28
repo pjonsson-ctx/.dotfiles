@@ -31,10 +31,8 @@ auto_loads = c(
         'kpjmisc',
         'egg',
         'googlesheets',
-        'mosaic',
         'janitor',
         'patchwork',
-        #'here',
         'shades'
         )
 
