@@ -26,7 +26,7 @@ alias R='R --no-save --no-restore-data'
 ### Alias for cluster access
 #alias s2="ssh jonssonp@saba2.cbio.mskcc.org"
 #alias hal="ssh jonssonp@hal.cbio.mskcc.org"
-alias luna="ssh -X jonssonp@luna.cbio.mskcc.org"
+alias luna="ssh jonssonp@luna.cbio.mskcc.org"
 #alias s01="ssh jonssonp@s01.cbio.mskcc.org"
 alias sel="ssh jonssonp@selene.cbio.mskcc.org"
 
