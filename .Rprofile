@@ -24,6 +24,7 @@ Sys.setenv(TAR = '/usr/bin/tar')
 auto_loads = c(
         'plyr',
         'tidyverse',
+        'tidyselect',
         'lubridate',
         'forcats',
         'stringr',
@@ -67,6 +68,6 @@ fread = function(x, ...) as_tibble(data.table::fread(x, ...))
 #fwrite = data.table::fwrite
 
 # Set ggplot theme
-theme_set(theme_bwmin)
+#theme_set(theme_bwmin)
 
 cat('...done!\n')

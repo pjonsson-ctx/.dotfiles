@@ -14,6 +14,7 @@ alias .....="cd ../../../.."
 alias qs="qstat"
 alias tf="tail -f"
 alias grep='/usr/bin/grep --color=auto'
+alias grep='/usr/local/bin/ggrep --color=auto' # requires brew install grep to install GNU grep
 alias mkdir='mkdir -p' # make all necessary parent directories
 alias lS='less -S'
 alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
