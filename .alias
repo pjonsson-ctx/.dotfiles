@@ -18,7 +18,7 @@ alias grep='/usr/local/bin/ggrep --color=auto' # requires brew install grep to i
 alias mkdir='mkdir -p' # make all necessary parent directories
 alias lS='less -S'
 alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
-alias where='readlink -m'
+alias where='readlink'
 
 ### Software alias
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
@@ -30,4 +30,5 @@ alias R='R --no-save --no-restore-data'
 alias luna="ssh jonssonp@luna.cbio.mskcc.org"
 #alias s01="ssh jonssonp@s01.cbio.mskcc.org"
 alias sel="ssh jonssonp@selene.cbio.mskcc.org"
+alias juno="ssh jonssonp@juno.mskcc.org"
 

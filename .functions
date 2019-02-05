@@ -5,7 +5,7 @@ connect () {
 
 ### Make and cd into directory
 mcd () {
-	mkdir -p $1
+    mkdir -p $1
     cd $1
     }
 
@@ -40,6 +40,13 @@ getcols() {
         echo "'$1' is not a valid file!"
     fi
 }
+
+# Readlink
+function readlink() {
+  DIR=$(echo "${1%/*}")
+  (cd "$DIR" && echo "$(pwd -P)")
+}
+
 
 ### Open Facets PNG from cluster
 open_facets() {

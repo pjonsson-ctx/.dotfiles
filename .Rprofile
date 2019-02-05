@@ -34,10 +34,16 @@ auto_loads = c(
         'googlesheets',
         'janitor',
         'patchwork',
-        'shades'
+        'shades',
+        'fs',
+        'datapasta'
         )
 
-options(defaultPackages = c(getOption('defaultPackages'), auto_loads))
+options(
+    defaultPackages = c(getOption('defaultPackages'), auto_loads),
+    tidyverse.quiet = T,
+    datatable.verbose = F
+    )
 
 like <- function(vector, pattern)
 {
@@ -69,5 +75,7 @@ fread = function(x, ...) as_tibble(data.table::fread(x, ...))
 
 # Set ggplot theme
 #theme_set(theme_bwmin)
-
 cat('...done!\n')
+
+# Set python version in reticulate
+Sys.setenv(RETICULATE_PYTHON = '/usr/local/bin/python2')
