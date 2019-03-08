@@ -39,3 +39,14 @@ then
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=ifs
 fi
+
+if [ $(df -h | grep -c "/Users/jonssonp/juno") == 0 ]
+then
+	echo -e 'Mounting juno...'
+    #mkdir $HOME/juno
+	sshfs jonssonp@juno.mskcc.org:/juno $HOME/juno \
+                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+                -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
+                -o volname=juno
+fi
+

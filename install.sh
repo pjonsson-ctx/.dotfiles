@@ -10,7 +10,7 @@ if [ ! -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]
 then
     brew install bash-git-prompt
     git_prompt_make_custom_theme
-    # make changes here
+    # make changes here ~/.git-prompt-colors.sh
 fi
 
 # Symlink .dotfiles to $HOME
