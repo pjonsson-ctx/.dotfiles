@@ -6,8 +6,8 @@ if [ $(df -h | grep -c "/Users/jonssonp/luna") == 0 ]
 then
         echo -e 'Mounting luna...'
         #mkdir $HOME/luna
-        #sshfs -o reconnect -o local -o volname=luna -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@selene.cbio.mskcc.org: $HOME/luna
-        sshfs jonssonp@selene.cbio.mskcc.org:/home/jonssonp $HOME/luna \
+        #sshfs -o reconnect -o local -o volname=luna -o follow_symlinks -o IdentityFile=/Users/jonssonp/.ssh/id_rsa jonssonp@luna.cbio.mskcc.org: $HOME/luna
+        sshfs jonssonp@luna.cbio.mskcc.org:/home/jonssonp $HOME/luna \
                 -o reconnect,ServerAliveInterval=60,ServerAliveCountMax=5,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=luna
@@ -24,8 +24,8 @@ if [ $(df -h | grep -c "/Users/jonssonp/res") == 0 ]
 then
         echo -e 'Mounting res...'
         #mkdir $HOME/res
-        sshfs jonssonp@selene.cbio.mskcc.org:/ifs/res/taylorlab/jonssonp $HOME/res \
-                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+        sshfs jonssonp@luna.cbio.mskcc.org:/ifs/res/taylorlab/jonssonp $HOME/res \
+                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache,noappledouble \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=res
 fi
@@ -34,8 +34,8 @@ if [ $(df -h | grep -c "/Users/jonssonp/ifs") == 0 ]
 then
         echo -e 'Mounting ifs...'
         #mkdir $HOME/ifs
-        sshfs jonssonp@selene.cbio.mskcc.org:/ifs $HOME/ifs \
-                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+        sshfs jonssonp@luna.cbio.mskcc.org:/ifs $HOME/ifs \
+                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache,noappledouble \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=ifs
 fi
@@ -45,7 +45,7 @@ then
 	echo -e 'Mounting juno...'
     #mkdir $HOME/juno
 	sshfs jonssonp@juno.mskcc.org:/juno $HOME/juno \
-                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache \
+                -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,local,follow_symlinks,transform_symlinks,defer_permissions,auto_cache,noappledouble \
                 -o IdentityFile=/Users/jonssonp/.ssh/id_rsa \
                 -o volname=juno
 fi

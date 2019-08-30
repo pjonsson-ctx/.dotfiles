@@ -14,6 +14,8 @@ set pastetoggle=<F2>            "Paste without being smart
 set cursorline
 set wildmenu                    "Autocomplete on TAB
 set lazyredraw
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=grey guibg=grey
 
 "Load pathogen
 "execute pathogen#infect('~/.vim/bundle/{}')
