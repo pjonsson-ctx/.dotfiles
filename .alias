@@ -21,7 +21,6 @@ alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
 alias where='readlink'
 
 ### Software alias
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias R='R --no-save --no-restore-data'
 
 ### Alias for cluster access
