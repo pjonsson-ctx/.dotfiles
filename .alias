@@ -24,11 +24,5 @@ alias where='readlink'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias R='R --no-save --no-restore-data'
 
-### Alias for cluster access
-#alias s2="ssh jonssonp@saba2.cbio.mskcc.org"
-#alias hal="ssh jonssonp@hal.cbio.mskcc.org"
-alias luna="ssh jonssonp@luna.cbio.mskcc.org"
-#alias s01="ssh jonssonp@s01.cbio.mskcc.org"
-alias sel="ssh jonssonp@selene.cbio.mskcc.org"
-alias juno="ssh jonssonp@juno.mskcc.org"
-
+### Alias for AWS box 
+alias box="ssh 10.72.101.14"
