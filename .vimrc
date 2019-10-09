@@ -25,7 +25,7 @@ call pathogen#helptags()
 "Colors!
 syntax enable
 filetype plugin indent on
-colorscheme sprinkles
+" colorscheme sprinkles
 
 "Fix tabs and indentation
 set autoindent

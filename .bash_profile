@@ -4,7 +4,6 @@ for DOTFILE in $(find $HOME/.dotfiles -maxdepth 1 -name ".[^.]*" \
 	! \( -name ".bash_profile" \
 	-o -name ".Rprofile" \
 	-o -name ".gitconfig" \
-	-o -name ".alias" \
 	-o -name ".vimrc" \) \
 	-type f)
 do
