@@ -83,3 +83,10 @@ bam_url() {
                 sed -e 's:,:    /ifs/dmpshare/share/irb12_245/:g' \
                 -e 's/$/.bam/g'
 }
+
+s3_presign() {
+    echo "BAM:"
+    aws s3 presign --expires-in 86400 $1
+    echo "BAI:"
+    aws s3 presign --expires-in 86400 ${1}.bai
+}

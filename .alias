@@ -24,5 +24,26 @@ alias where='readlink'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias R='R --no-save --no-restore-data'
 
-### Alias for AWS box 
-alias box="ssh 10.72.101.14"
+### Alias for AWS
+alias cpu="ssh 10.72.101.14"
+alias gpu="ssh 10.72.114.124"
+alias rbox="ssh 10.72.97.155"
+alias biggpu="ssh 10.72.116.35"
+alias pjcpu="ssh 10.72.114.126"
+alias pjgpu="ssh 10.72.117.28"
+
+### dplyr-cli
+alias mutate="dplyr mutate"
+alias filter="dplyr filter"
+alias select="dplyr select"
+alias summarise="dplyr summarise"
+alias group_by="dplyr group_by"
+alias ungroup="dplyr ungroup"
+alias count="dplyr count"
+alias arrange="dplyr arrange"
+alias kable="dplyr kable"
+
+### VS Code
+alias code="code --new-window"
+
+alias glances='glances --theme-white'

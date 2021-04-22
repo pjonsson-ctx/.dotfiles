@@ -24,26 +24,26 @@ Sys.setenv(TAR = '/usr/bin/tar')
 auto_loads = c(
         'plyr',
         'tidyverse',
-        'tidyselect',
-        'lubridate',
-        'forcats',
-        'stringr',
-        'reshape2',
-        'kpjmisc',
-        'egg',
-        'googlesheets',
+#        'tidyselect',
+#        'lubridate',
+#        'forcats',
+#        'stringr',
+#        'reshape2',
+#        'kpjmisc',
+#        'egg',
+#        'googlesheets',
         'janitor',
         'patchwork',
-        'shades',
+#        'shades',
         'fs',
         'datapasta'
         )
 
 options(
-    defaultPackages = c(getOption('defaultPackages'), auto_loads),
-    tidyverse.quiet = T,
-    datatable.verbose = F
-    )
+   defaultPackages = c(getOption('defaultPackages'), auto_loads),
+   tidyverse.quiet = T,
+   datatable.verbose = F
+   )
 
 like <- function(vector, pattern)
 {
@@ -75,7 +75,18 @@ fread = function(x, ...) as_tibble(data.table::fread(x, ...))
 
 # Set ggplot theme
 #theme_set(theme_bwmin)
+#options(
+#  ggplot2.discrete.fill = list(
+#    c("#E69F00", "#56B4E9", "#009E73", "#D55E00", "#F0E442", "#0072B2", "#CC79A7", "#999999"),
+#    RColorBrewer::brewer.pal(8, 'Set2')
+#  ),
+#  ggplot2.discrete.color = list(
+#    c("#E69F00", "#56B4E9", "#009E73", "#D55E00", "#F0E442", "#0072B2", "#CC79A7", "#999999"),
+#    RColorBrewer::brewer.pal(8, 'Set2')
+#  )
+#)
 cat('...done!\n')
 
 # Set python version in reticulate
-Sys.setenv(RETICULATE_PYTHON = '/usr/local/bin/python2')
+# Sys.setenv(RETICULATE_PYTHON = '/usr/local/bin/python2')
+Sys.setenv(RETICULATE_PYTHON = '~/venv/dev/bin/python')

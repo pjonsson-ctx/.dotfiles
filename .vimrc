@@ -19,13 +19,12 @@ highlight ColorColumn ctermbg=grey guibg=grey
 
 "Load pathogen
 "execute pathogen#infect('~/.vim/bundle/{}')
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect()
+execute pathogen#helptags()
 
 "Colors!
 syntax enable
 filetype plugin indent on
-" colorscheme sprinkles
 
 "Fix tabs and indentation
 set autoindent
@@ -42,7 +41,6 @@ set incsearch
 set hlsearch
 set ignorecase
 nnoremap <leader><space> :nohlsearch<CR>
-"turn off search highlight
 
 "Enable fzf
 set rtp+=~/.fzf
@@ -53,15 +51,28 @@ set list
 
 " Sane line joins
 if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j
+    set formatoptions+=j
 endif
 
 " Install lightline
 "  git clone https://github.com/itchyny/lightline.vim
 "  ~/.vim/bundle/lightline.vim
 set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+"let g:lightline = { 'colorscheme': 'wombat' }
+autocmd VimEnter * redraw
 
+" Cursor settings
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+" Disable blinking
+autocmd GUIEnter * set vb t_vb= " for your GUI
+autocmd VimEnter * set vb t_vb=
+
+" Enable selection highlighting
+:highlight Visual cterm=reverse ctermbg=NONE
 

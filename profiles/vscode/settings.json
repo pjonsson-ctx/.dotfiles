@@ -1,31 +1,75 @@
 {
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontWeight": "400", // Regular
     "editor.fontLigatures": true,
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "GitHub 2019",
     "editor.rulers": [120],
     "editor.minimap.enabled": false,
     "[r]": {},
     "editor.wordWrap": "wordWrapColumn",
     "python.linting.pylintEnabled": false,
-    "python.pythonPath": "/usr/local/opt/python@2/bin/python2.7",
+    "python.pythonPath": "/Users/pjonsson/venv/dev/bin/python",
     "editor.wordWrapColumn": 120,
     "python.autoComplete.addBrackets": true,
+    "python.formatting": "black",
     "python.formatting.autopep8Args": [
         "--max-line-length",
         "120",
         "--experimental",
         "--indent-size=2"
     ],
+    "python.formatting.blackArgs": ["--line-length", "120"],
     "workbench.startupEditor": "welcomePage",
     "files.exclude": {
         "**/.bam": true,
         "**/.fastq.gz": true
     },
-    "workbench.iconTheme": "vscode-great-icons",
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.showTabs": true,
     "remote.SSH.configFile": "/Users/jonssonp/.ssh/config",
     "remote.SSH.showLoginTerminal": true,
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "workbench.colorTheme": "GitHub Plus",
+    "workbench.iconTheme": "vscode-great-icons",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "disabled",
+
+    // All below IntelliSense, from https://code.visualstudio.com/docs/editor/intellisense#_customizing-intellisense
+    // Controls if quick suggestions should show up while typing
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+
+     // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+    "editor.acceptSuggestionOnCommitCharacter": true,
+
+    // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+    "editor.acceptSuggestionOnEnter": "on",
+
+    // Controls the delay in ms after which quick suggestions will show up.
+    "editor.quickSuggestionsDelay": 10,
+
+    // Controls if suggestions should automatically show up when typing trigger characters
+    "editor.suggestOnTriggerCharacters": true,
+
+    // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
+    "editor.tabCompletion": "on",
+
+    // Controls whether sorting favours words that appear close to the cursor
+    "editor.suggest.localityBonus": true,
+
+    // Controls how suggestions are pre-selected when showing the suggest list
+    "editor.suggestSelection": "recentlyUsed",
+
+    // Enable word based suggestions
+    "editor.wordBasedSuggestions": true,
+
+    // Enable parameter hints
+    "editor.parameterHints.enabled": true,
+    "workbench.colorCustomizations": {},
+    "[python]": {},
+    "python.jediEnabled": false,
+
 }

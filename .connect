@@ -1,0 +1,10 @@
+if [ "$(df | grep -c "\/mnt\/home\/pjonsson")" -eq 0 ]
+then
+    python2.7 ~/git/fuseMount/fuseMount.py -n 10.72.97.155 -d /mnt/home/pjonsson -m home -U pjonsson
+fi
+
+if [ "$(df | grep -c "\/mnt\/cbbi-data00")" -eq 0 ]
+then
+    python2.7 ~/git/fuseMount/fuseMount.py -n 10.72.97.155 -d /mnt/cbbi-data00 -m cbbi-data00 -U pjonsson
+fi
+
